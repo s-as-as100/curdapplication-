@@ -1,17 +1,6 @@
 {
   "users": [
     {
-      "fullName": "kaif",
-      "email": "kaif123@gmail.com",
-      "Age": "34",
-      "DOB": "2021-04-30",
-      "Branch": "mech",
-      "CollegeName": "",
-      "City": "doida",
-      "Percentage": "87",
-      "id": 1
-    },
-    {
       "fullName": "suhail",
       "email": "suhail@gmail.com",
       "Age": "25",
