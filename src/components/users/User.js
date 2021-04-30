@@ -4,11 +4,15 @@ import axios from "axios";
 
 const User = () => {
   const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    phone: "",
-    webiste: ""
+    fullName: "",
+    email: "", 
+   Age:"",
+   DOB:"",
+   Branch:"",
+   CollegeName:"",
+   City:"",
+   Percentage:"",
+
   });
   const { id } = useParams();
   useEffect(() => {
@@ -20,17 +24,20 @@ const User = () => {
   };
   return (
     <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
+      <Link className="btn btn-primary" to="/dashboard">
         back to Home
       </Link>
       <h1 className="display-4">User Id: {id}</h1>
       <hr />
       <ul className="list-group w-50">
-        <li className="list-group-item">name: {user.name}</li>
-        <li className="list-group-item">user name: {user.username}</li>
-        <li className="list-group-item">email: {user.email}</li>
-        <li className="list-group-item">phone: {user.phone}</li>
-        <li className="list-group-item">website: {user.website}</li>
+        <li className="list-group-item">fullName: {user.fullName}</li>
+       <li className="list-group-item">email: {user.email}</li>
+       <li className="list-group-item">Age:{user.Age}</li>
+        <li className="list-group-item">DOB: {user.DOB}</li>
+        <li className="list-group-item">Branch: {user.Branch}</li>
+        <li className="list-group-item">CollegeName: {user.CollegeName}</li>
+        <li className="list-group-item">City: {user.City}</li>
+        <li className="list-group-item">Percentage: {user.Percentage}</li>
       </ul>
     </div>
   );

@@ -6,14 +6,18 @@ const EditUser = () => {
   let history = useHistory();
   const { id } = useParams();
   const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    phone: "",
-    website: ""
+    fullName: "",
+    email: "", 
+   Age:"",
+   DOB:"",
+   Branch:"",
+   CollegeName:"",
+   City:"",
+   Percentage:"",
+
   });
 
-  const { name, username, email, phone, website } = user;
+  const {fullName,email,Age,DOB,Branch,CollegeName,City,Percentage } = user;
   const onInputChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
@@ -25,7 +29,7 @@ const EditUser = () => {
   const onSubmit = async e => {
     e.preventDefault();
     await axios.put(`http://localhost:3003/users/${id}`, user);
-    history.push("/");
+    history.push("/dashboard");
   };
 
   const loadUser = async () => {
@@ -37,26 +41,17 @@ const EditUser = () => {
       <div className="w-75 mx-auto shadow p-5">
         <h2 className="text-center mb-4">Edit A User</h2>
         <form onSubmit={e => onSubmit(e)}>
-          <div className="form-group">
-            <input
+          <div>
+        <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Name"
-              name="name"
-              value={name}
+              placeholder="Enter Your Full Name"
+              name="fullName"
+              value={fullName}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-control form-control-lg"
-              placeholder="Enter Your Username"
-              name="username"
-              value={username}
-              onChange={e => onInputChange(e)}
-            />
-          </div>
+          
           <div className="form-group">
             <input
               type="email"
@@ -69,11 +64,21 @@ const EditUser = () => {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="number"
               className="form-control form-control-lg"
-              placeholder="Enter Your Phone Number"
-              name="phone"
-              value={phone}
+              placeholder="Enter Your  Age"
+              name="Age"
+              value={Age}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="date"
+              className="form-control form-control-lg"
+              placeholder="Enter Your DOB"
+              name="DOB"
+              value={DOB}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -81,9 +86,39 @@ const EditUser = () => {
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Website Name"
-              name="website"
-              value={website}
+              placeholder="Enter Your Branch"
+              name="Branch"
+              value={Branch}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              placeholder="Enter Your COllege Name"
+              name="COllegeName"
+              value={CollegeName}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-control form-control-lg"
+              placeholder="Enter Your City Name"
+              name="City"
+              value={City}
+              onChange={e => onInputChange(e)}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              className="form-control form-control-lg"
+              placeholder="Enter Your Percentage"
+              name="Percentage"
+              value={Percentage}
               onChange={e => onInputChange(e)}
             />
           </div>
